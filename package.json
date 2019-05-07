@@ -1,7 +1,6 @@
 {
-  "private": true,
   "name": "flow-repl",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Node.js REPL with Flow support",
   "main": "dist/index.js",
   "scripts": {
@@ -10,7 +9,7 @@
     "lint": "eslint . --max-warnings 0",
     "types": "flow-copy-source src dist",
     "build": "babel src/ -d dist/",
-    "test": "npm run flow && npm run lint",
+    "test": "npm run flow",
     "prepare": "npm run clean && npm run build",
     "prepack": "npm test",
     "start": "npm run build && node dist"
