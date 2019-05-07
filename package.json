@@ -1,0 +1,66 @@
+{
+  "private": true,
+  "name": "flow-repl",
+  "version": "0.0.0",
+  "description": "Node.js REPL with Flow support",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist/",
+    "flow": "flow check",
+    "lint": "eslint . --max-warnings 0",
+    "types": "flow-copy-source src dist",
+    "build": "babel src/ -d dist/",
+    "test": "npm run flow && npm run lint",
+    "prepare": "npm run clean && npm run build",
+    "prepack": "npm test",
+    "start": "npm run build && node dist"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "flow-repl": "bin/flow-repl"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "flow-remove-types": "^1.2.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-flowtype": "^3.2.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "flow-bin": "^0.76.0",
+    "flow-copy-source": "^1.3.0",
+    "rimraf": "^2.6.2"
+  },
+  "author": "Bannerets <comonoid@protonmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "flow",
+    "flowtype",
+    "repl",
+    "node"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bannerets/flow-repl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bannerets/flow-repl/issues"
+  },
+  "homepage": "https://github.com/Bannerets/flow-repl#readme"
+}
