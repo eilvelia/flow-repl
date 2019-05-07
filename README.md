@@ -6,6 +6,8 @@ Node.js REPL with Flow support.
 
 WIP
 
+![Screenshot](https://i.imgur.com/UIfyWZ3.jpg)
+
 ## Installation
 
 ```console
